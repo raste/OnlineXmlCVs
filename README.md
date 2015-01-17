@@ -20,7 +20,13 @@ Seems that it wasn't worth enough and I wasn't recruited :(
 
 ### Poke/Edit
 
-set as start page -> UploadCV
+In order to see the code you will have to open the [Source/UploadXmlCvs.sln](https://github.com/raste/OnlineXmlCVs/blob/master/Source/UploadXmlCvs.sln) file with Visual Studio 2010 or greater.
+
+To run the site from Visual Studio: 
+- Set [UploadCV.aspx](https://github.com/raste/OnlineXmlCVs/blob/master/Source/UploadXmlCvs/UploadCV.aspx) as start page 
+- Make sure tou have Microsoft SQL Server 2008 or greater installed. 
+- Create the database from the script files ([DB\DbScriptNoData.sql](https://github.com/raste/OnlineXmlCVs/blob/master/DB/DbScriptNoData.sql) or [DB/DbScriptWithData.sql](https://github.com/raste/OnlineXmlCVs/blob/master/DB/DbScriptWithData.sql)) or restore it from the backup files ([DB/DbWithNoEnteredData.bak](https://github.com/raste/OnlineXmlCVs/blob/master/DB/DbWithNoEnteredData.bak) or [DB/DbWithEnteredData.bak](https://github.com/raste/OnlineXmlCVs/blob/master/DB/DbWithEnteredData.bak)).
+- Update the database connection string in [Source/UploadXmlCvs/Web.config file](https://github.com/raste/OnlineXmlCVs/blob/master/Source/UploadXmlCvs/Web.config). Replace "NAME" in `Data Source=NAME;` with the name of your SQL Server. Replace "CVs" in `Initial Catalog=CVs;` with the application database name. If the database is password protected add `user id=dbUser;password=userPass;` right after `Initial Catalog=PermissionsManagement;` section and replace "dbUser" with the database user and "userPass" with his password.
 
 ### Images
 
