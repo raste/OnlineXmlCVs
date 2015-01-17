@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CV description="Bulgarian variant">
+  <FirstName>Georgi</FirstName>
+  <LastName>Kolev</LastName>
+  <Email>g_kolev@abv.bg</Email>
+  <Gender>мъж</Gender>
+  <YearBorn>1988</YearBorn>
+  <Nationality>Българин</Nationality>
+  <LiveInCity>Велико Търново</LiveInCity>
+  <Details>Идея и пълна разработка на : www.wiadvice.com
+    Други разработки, които могат да се покажат :
+    - Сайт галерия (ASP.NET) разработен за дипломна работа (2-3 седмици);
+    - Кратко FLASH интро на анимационния сериал "South Park";
+    - FLASH енциклопедия за животни, също разработена за дипломна работа;
+    Използвани инструменти за разработка: JBuilder , Visual Studio 2008/2010 , Eclipse , Dreamweaver , Visual Studio 6, Adobe Flash</Details>
+  <Education>
+    <SpEducation>
+      <From>2006/01/10</From>
+      <To>2010/01/06</To>
+      <PlaceName>Великотърновски университет "Св. Св. Кирил и Методии"</PlaceName>
+      <Location>Велико Търново</Location>
+      <Level>Бакалавър</Level>
+      <Major>Компютърни науки</Major>
+      <Subjects>
+        <Subject>Английски език</Subject>
+        <Subject>Програмиране на C++</Subject>
+        <Subject>Визуално програмиране</Subject>
+        <Subject>Компютърни мрежи</Subject>
+        <Subject>Програмиране на JAVA</Subject>
+        <Subject>Бази от данни</Subject>
+        <Subject>HTML,CSS,XML,JAVA servlets</Subject>
+        <Subject>FLASH</Subject>
+      </Subjects>
+      <Details></Details>
+    </SpEducation>
+    <!-- 
+   ..
+   ..
+   -->
+  </Education>
+  <!--
+  <WorkExperiance>
+    <SpExperiance>
+      <From></From>
+      <To></To>
+      <Company></Company>
+      <Position></Position>
+      <Details></Details>
+    </SpExperiance>
+  </WorkExperiance>
+  -->
+  <Skills>
+    <Skill>
+      <Name>IIS</Name>
+      <Gradation>Средно</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>ASP.NET</Name>
+      <Gradation>Добро</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>WebServices</Name>
+      <Gradation>Добро</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>Entity Data Model</Name>
+      <Gradation>Много добро</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>C#</Name>
+      <Gradation>Много добро</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>AJAX</Name>
+      <Gradation>Добро</Gradation>
+      <Details></Details>
+    </Skill>
+  </Skills>
+</CV>

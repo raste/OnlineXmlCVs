@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CV description="">
+  <FirstName>Bender</FirstName>
+  <LastName></LastName>
+  <Email>someMail</Email>
+  <Gender>mmale</Gender>
+  <YearBorn>2015</YearBorn>
+  <Nationality>Germany</Nationality>
+  <LiveInCity></LiveInCity>
+  
+  <Education>
+  
+    <SpEducation>
+      <From>2002/20/20</From>
+      <To>2006</To>
+      <PlaceName></PlaceName>
+      <Location>Berlin</Location>
+      <Details></Details>
+    </SpEducation>
+	
+	<SpEducation>
+      <From></From>
+      <To>2010/10/10</To>
+      <PlaceName>Univercity of Berlin</PlaceName>
+      <Location>Berlin</Location>
+	  <Level>Bachelor's degree</Level>
+      <Major>Engineering</Major>
+      <Subjects>
+        <Subject>Engineering basics</Subject>
+		<Subject>Engineering software</Subject>
+		<Subject>English</Subject>
+      </Subjects>
+      <Details></Details>
+    </SpEducation>
+	
+  </Education>
+
+  <WorkExperiance>
+    <SpExperiance>
+      <From>2006/15</From>
+      <To>2008/06/13</To>
+      <Company>An Company</Company>
+      <Position></Position>
+    </SpExperiance>
+  </WorkExperiance>
+  
+  <Skills>
+    <Skill>
+      <Name>Excel</Name>
+    </Skill>
+    <Skill>
+       <Name>Excel</Name>
+    </Skill>
+    <Skill>
+      <Name>Access</Name>
+    </Skill>
+  </Skills>
+</CV>

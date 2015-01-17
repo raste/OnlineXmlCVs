@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CVsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CVsModelStoreContainer">
+          <EntitySet Name="CVs" EntityType="CVsModel.Store.CVs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Education" EntityType="CVsModel.Store.Education" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Skills" EntityType="CVsModel.Store.Skills" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subjects" EntityType="CVsModel.Store.Subjects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="CVsModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkExperiance" EntityType="CVsModel.Store.WorkExperiance" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CVs_User" Association="CVsModel.Store.FK_CVs_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CVs" EntitySet="CVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Education_CV" Association="CVsModel.Store.FK_Education_CV">
+            <End Role="CVs" EntitySet="CVs" />
+            <End Role="Education" EntitySet="Education" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_CV" Association="CVsModel.Store.FK_Skills_CV">
+            <End Role="CVs" EntitySet="CVs" />
+            <End Role="Skills" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Education" Association="CVsModel.Store.FK_Subjects_Education">
+            <End Role="Education" EntitySet="Education" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkExperiance_CV" Association="CVsModel.Store.FK_WorkExperiance_CV">
+            <End Role="CVs" EntitySet="CVs" />
+            <End Role="WorkExperiance" EntitySet="WorkExperiance" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CVs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="born" Type="int" Nullable="false" />
+          <Property Name="nationality" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="liveIncity" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="details" Type="nvarchar(max)" />
+          <Property Name="dateAdded" Type="datetime" Nullable="false" />
+          <Property Name="description" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="gender" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CvID" Type="bigint" Nullable="false" />
+          <Property Name="fromDate" Type="datetime" Nullable="false" />
+          <Property Name="toDate" Type="datetime" />
+          <Property Name="placeName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="details" Type="nvarchar(max)" />
+          <Property Name="level" Type="nvarchar" MaxLength="100" />
+          <Property Name="major" Type="nvarchar" MaxLength="100" />
+          <Property Name="location" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="skill" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="gradation" Type="nvarchar" MaxLength="100" />
+          <Property Name="details" Type="nvarchar" MaxLength="500" />
+          <Property Name="CvID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EduID" Type="bigint" Nullable="false" />
+          <Property Name="subject" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="lastName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="WorkExperiance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CvID" Type="bigint" Nullable="false" />
+          <Property Name="fromDate" Type="datetime" Nullable="false" />
+          <Property Name="toDate" Type="datetime" />
+          <Property Name="companyName" Type="nvarchar" MaxLength="300" />
+          <Property Name="position" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="details" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_CVs_User">
+          <End Role="Users" Type="CVsModel.Store.Users" Multiplicity="1" />
+          <End Role="CVs" Type="CVsModel.Store.CVs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVs">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Education_CV">
+          <End Role="CVs" Type="CVsModel.Store.CVs" Multiplicity="1" />
+          <End Role="Education" Type="CVsModel.Store.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_CV">
+          <End Role="CVs" Type="CVsModel.Store.CVs" Multiplicity="1" />
+          <End Role="Skills" Type="CVsModel.Store.Skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Skills">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Education">
+          <End Role="Education" Type="CVsModel.Store.Education" Multiplicity="1" />
+          <End Role="Subjects" Type="CVsModel.Store.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Education">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="EduID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkExperiance_CV">
+          <End Role="CVs" Type="CVsModel.Store.CVs" Multiplicity="1" />
+          <End Role="WorkExperiance" Type="CVsModel.Store.WorkExperiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WorkExperiance">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CVsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CVsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CVSet" EntityType="CVsModel.CV" />
+          <EntitySet Name="EducationSet" EntityType="CVsModel.Education" />
+          <EntitySet Name="SkillSet" EntityType="CVsModel.Skill" />
+          <EntitySet Name="SubjectSet" EntityType="CVsModel.Subject" />
+          <EntitySet Name="UserSet" EntityType="CVsModel.User" />
+          <EntitySet Name="WorkExperianceSet" EntityType="CVsModel.WorkExperiance" />
+          <AssociationSet Name="FK_Education_CV" Association="CVsModel.FK_Education_CV">
+            <End Role="CVs" EntitySet="CVSet" />
+            <End Role="Education" EntitySet="EducationSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_CV" Association="CVsModel.FK_Skills_CV">
+            <End Role="CVs" EntitySet="CVSet" />
+            <End Role="Skills" EntitySet="SkillSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkExperiance_CV" Association="CVsModel.FK_WorkExperiance_CV">
+            <End Role="CVs" EntitySet="CVSet" />
+            <End Role="WorkExperiance" EntitySet="WorkExperianceSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Education" Association="CVsModel.FK_Subjects_Education">
+            <End Role="Education" EntitySet="EducationSet" />
+            <End Role="Subjects" EntitySet="SubjectSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CVs_User" Association="CVsModel.FK_CVs_User">
+            <End Role="Users" EntitySet="UserSet" />
+            <End Role="CVs" EntitySet="CVSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="born" Type="Int32" Nullable="false" />
+          <Property Name="nationality" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="liveIncity" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dateAdded" Type="DateTime" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Education" Relationship="CVsModel.FK_Education_CV" FromRole="CVs" ToRole="Education" />
+          <NavigationProperty Name="Skills" Relationship="CVsModel.FK_Skills_CV" FromRole="CVs" ToRole="Skills" />
+          <NavigationProperty Name="WorkExperiance" Relationship="CVsModel.FK_WorkExperiance_CV" FromRole="CVs" ToRole="WorkExperiance" />
+          <NavigationProperty Name="User" Relationship="CVsModel.FK_CVs_User" FromRole="CVs" ToRole="Users" />
+          <Property Type="String" Name="gender" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CvID" Type="Int64" Nullable="false" />
+          <Property Name="fromDate" Type="DateTime" Nullable="false" />
+          <Property Name="toDate" Type="DateTime" />
+          <Property Name="placeName" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="level" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="major" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CV" Relationship="CVsModel.FK_Education_CV" FromRole="Education" ToRole="CVs" />
+          <NavigationProperty Name="Subjects" Relationship="CVsModel.FK_Subjects_Education" FromRole="Education" ToRole="Subjects" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="skill" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="gradation" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="CvID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="CV" Relationship="CVsModel.FK_Skills_CV" FromRole="Skills" ToRole="CVs" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EduID" Type="Int64" Nullable="false" />
+          <Property Name="subject" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Education" Relationship="CVsModel.FK_Subjects_Education" FromRole="Subjects" ToRole="Education" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CVs" Relationship="CVsModel.FK_CVs_User" FromRole="Users" ToRole="CVs" />
+        </EntityType>
+        <EntityType Name="WorkExperiance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CvID" Type="Int64" Nullable="false" />
+          <Property Name="fromDate" Type="DateTime" Nullable="false" />
+          <Property Name="toDate" Type="DateTime" />
+          <Property Name="companyName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="position" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CV" Relationship="CVsModel.FK_WorkExperiance_CV" FromRole="WorkExperiance" ToRole="CVs" />
+        </EntityType>
+        <Association Name="FK_Education_CV">
+          <End Role="CVs" Type="CVsModel.CV" Multiplicity="1" />
+          <End Role="Education" Type="CVsModel.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_CV">
+          <End Role="CVs" Type="CVsModel.CV" Multiplicity="1" />
+          <End Role="Skills" Type="CVsModel.Skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Skills">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkExperiance_CV">
+          <End Role="CVs" Type="CVsModel.CV" Multiplicity="1" />
+          <End Role="WorkExperiance" Type="CVsModel.WorkExperiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WorkExperiance">
+              <PropertyRef Name="CvID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Education">
+          <End Role="Education" Type="CVsModel.Education" Multiplicity="1" />
+          <End Role="Subjects" Type="CVsModel.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Education">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="EduID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CVs_User">
+          <End Type="CVsModel.User" Role="Users" Multiplicity="1" />
+          <End Type="CVsModel.CV" Role="CVs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVs">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CVsModelStoreContainer" CdmEntityContainer="CVsEntities">
+          <EntitySetMapping Name="CVSet"><EntityTypeMapping TypeName="CVsModel.CV"><MappingFragment StoreEntitySet="CVs">
+            <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="born" ColumnName="born" />
+            <ScalarProperty Name="nationality" ColumnName="nationality" />
+            <ScalarProperty Name="liveIncity" ColumnName="liveIncity" />
+            <ScalarProperty Name="details" ColumnName="details" />
+            <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+            <ScalarProperty Name="description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EducationSet"><EntityTypeMapping TypeName="CVsModel.Education"><MappingFragment StoreEntitySet="Education">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CvID" ColumnName="CvID" />
+            <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+            <ScalarProperty Name="toDate" ColumnName="toDate" />
+            <ScalarProperty Name="placeName" ColumnName="placeName" />
+            <ScalarProperty Name="details" ColumnName="details" />
+            <ScalarProperty Name="level" ColumnName="level" />
+            <ScalarProperty Name="major" ColumnName="major" />
+            <ScalarProperty Name="location" ColumnName="location" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SkillSet"><EntityTypeMapping TypeName="CVsModel.Skill"><MappingFragment StoreEntitySet="Skills">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="skill" ColumnName="skill" />
+            <ScalarProperty Name="gradation" ColumnName="gradation" />
+            <ScalarProperty Name="details" ColumnName="details" />
+            <ScalarProperty Name="CvID" ColumnName="CvID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SubjectSet"><EntityTypeMapping TypeName="CVsModel.Subject"><MappingFragment StoreEntitySet="Subjects">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="EduID" ColumnName="EduID" />
+            <ScalarProperty Name="subject" ColumnName="subject" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserSet"><EntityTypeMapping TypeName="CVsModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="firstName" ColumnName="firstName" />
+            <ScalarProperty Name="lastName" ColumnName="lastName" />
+            <ScalarProperty Name="email" ColumnName="email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="WorkExperianceSet"><EntityTypeMapping TypeName="CVsModel.WorkExperiance"><MappingFragment StoreEntitySet="WorkExperiance">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CvID" ColumnName="CvID" />
+            <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+            <ScalarProperty Name="toDate" ColumnName="toDate" />
+            <ScalarProperty Name="companyName" ColumnName="companyName" />
+            <ScalarProperty Name="position" ColumnName="position" />
+            <ScalarProperty Name="details" ColumnName="details" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CvModel">
+        <EntityTypeShape EntityType="CVsModel.CV" Width="1.5" PointX="0.75" PointY="4.375" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVsModel.Education" Width="1.5" PointX="3" PointY="1.25" Height="3.1340950520833326" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVsModel.Skill" Width="1.5" PointX="3" PointY="5.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVsModel.Subject" Width="1.5" PointX="5.25" PointY="2" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVsModel.User" Width="1.5" PointX="5.75" PointY="4.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVsModel.WorkExperiance" Width="1.5" PointX="3" PointY="8.125" Height="2.5571907552083317" IsExpanded="true" />
+        <AssociationConnector Association="CVsModel.FK_Education_CV" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="4.375" />
+          <ConnectorPoint PointX="1.5" PointY="2.8124995" />
+          <ConnectorPoint PointX="3" PointY="2.8124995" />
+        </AssociationConnector>
+        <AssociationConnector Association="CVsModel.FK_Skills_CV" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.2112939453125" />
+          <ConnectorPoint PointX="3" PointY="6.2112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CVsModel.FK_WorkExperiance_CV" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="7.701396484375" />
+          <ConnectorPoint PointX="1.5" PointY="9.4035953776041659" />
+          <ConnectorPoint PointX="3" PointY="9.4035953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CVsModel.FK_Subjects_Education" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.8939925130208328" />
+          <ConnectorPoint PointX="5.25" PointY="2.8939925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="CVsModel.FK_CVs_User" >
+          <ConnectorPoint PointX="5.75" PointY="4.90625" />
+          <ConnectorPoint PointX="2.25" PointY="4.90625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

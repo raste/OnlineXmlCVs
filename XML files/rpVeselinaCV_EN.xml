@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CV description="English variant">
+  <FirstName>Veselina</FirstName>
+  <LastName>Smith</LastName>
+  <Email>vesela@random.com</Email>
+  <Gender>female</Gender>
+  <YearBorn>1985</YearBorn>
+  <Nationality>Bulgarian</Nationality>
+  <LiveInCity>Sofia</LiveInCity>
+  <Details></Details>
+  <Education>
+    <SpEducation>
+      <From>June 2008</From>
+      <PlaceName>University of Sofia</PlaceName>
+      <Location>Sofia</Location>
+      <Level>Bachelor's degree</Level>
+      <Major>Iconomics</Major>
+    </SpEducation>
+	
+	 <SpEducation>
+      <From>September 1992</From>
+      <To>May 2004</To>
+      <PlaceName>Some school in Sofia</PlaceName>
+      <Location>Sofia</Location>
+      <Level>Primary education</Level>
+      <Major>Iconomics</Major>
+    </SpEducation>
+
+  </Education>
+  
+  <WorkExperiance>
+    <SpExperiance>
+      <From>July 2004</From>
+      <To>December 2007</To>
+      <Company>CBA company</Company>
+      <Position>Products seller</Position>
+    </SpExperiance>
+	<SpExperiance>
+      <From>February 2009</From>
+      <Company>Groceries storahouse</Company>
+      <Position>Sales representative</Position>
+    </SpExperiance>
+  </WorkExperiance>
+
+  <Skills>
+    <Skill>
+      <Name>English</Name>
+      <Gradation>Very good</Gradation>
+    </Skill>
+    <Skill>
+      <Name>Microsoft office</Name>
+      <Gradation>Good</Gradation>
+    </Skill>
+    <Skill>
+      <Name>Social skills</Name>
+      <Gradation>Very good</Gradation>
+    </Skill>
+  </Skills>
+</CV>

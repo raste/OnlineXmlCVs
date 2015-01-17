@@ -1,0 +1,183 @@
+﻿body
+{
+	font-family: "Trebuchet MS" ,Verdana,Arial, "Times New Roman" ,Georgia,Tahoma, "Segoe UI";
+	font-size: 15px;
+	/*width: 100%;*/
+	text-align: center;
+	background-color: #C9E4FC;
+	word-wrap:break-word;
+}
+
+.madeBy
+{
+	color: #74B9F8;
+}
+
+a
+{
+	color: #6B0A96; /*#2E7244;*/
+	text-decoration: none; /*font-family:"Times New Roman",Tahoma,"Segoe UI","Trebuchet MS";/*Arial*/
+}
+
+a:visited
+{
+	/*color:#428220;*/
+    text-decoration:none;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+.error
+{
+	color: #A42900;
+}
+
+div.main
+{
+	border: 2px solid #1D8DE9;
+	width: 600px;
+	margin: 0 auto;
+	background-color: #96CBED;
+	border-radius: 10px;
+	padding: 20px 20px 20px 20px;
+	background-image: url('../images/uploadBgr.bmp');
+	background-repeat: repeat-x;
+}
+
+.uploadBtn
+{
+	background-color: #077EB8;
+	color: #FFFFFF;
+	font-weight: bold;
+	border: 1px ridge #056492;
+	border-radius: 5px;
+	width:100px;
+}
+
+
+
+.links
+{
+	width:640px; 
+	text-align:left;
+	margin: 0 auto;
+	padding-top:10px;
+}
+
+div.mainAllCVs
+{
+	border: 2px solid #1D8DE9;
+	width: 700px;
+	margin: 0 auto;
+	background-color: #96CBED;
+	border-radius: 10px;
+	padding: 15px 20px 15px 20px;
+	background-image: url('../images/uploadBgr.bmp');
+	background-repeat: repeat-x;
+	text-align:left;
+}
+
+.userCVs
+{
+	border: 1px solid White; /*#248EE9;*/
+	margin: 5px 0px 5px 0px;
+	border-radius: 5px;
+	padding: 5px;
+	background-image: url('../images/usrCvsBgr.bmp');
+	background-repeat: repeat-y;
+	background-color: #A8D3F0;
+}
+
+.userCVs:hover
+{
+	background-color: #71B7F0;
+	background-image: none;
+}
+
+.userPnl
+{
+	float:left;
+	width:320px;
+	padding-left:5px;
+}
+
+.cvPnl
+{
+	margin-left:330px;
+	border-left:1px solid White; /*#248EE9;*/
+	padding-left:5px;
+}
+
+.username
+{
+	color:White;
+}
+
+div.CVinfo
+{
+	
+	border: 2px solid #1D8DE9;
+	width: 700px;
+	margin:10px auto 0px auto;
+	background-color: #96CBED;
+	border-radius: 10px;
+	padding: 15px 20px 15px 20px;
+	background-image: url('../images/uploadBgr.bmp');
+	background-repeat: repeat-x;
+	text-align:left;
+}
+
+.clearfix:after 
+{
+	
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix2 
+{
+   width:100%;
+   overflow:auto;
+}
+
+p.header
+{
+	margin:10px 0px 10px 0px;
+	border-bottom:1px solid Black;
+	padding-bottom:5px;
+	font-family:"Calibri";
+	font-size:18px;
+	font-weight:bold;
+}
+
+p.section
+{
+	margin:10px 0px 0px 0px;
+}
+
+.leftColumn
+{
+	float:left;
+	width:200px;
+	text-align:right;
+	/*padding-right:5px;*/
+}
+
+.rightColumn
+{
+	margin-left:205px;
+    /*padding-left:5px;*/
+}
+
+.hrPnl
+{
+	margin:7px 0px 9px 120px;
+	border-bottom:1px solid Black;
+	/*height:2px;*/
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CV description="English variant">
+  <FirstName>Georgi</FirstName>
+  <LastName>Kolev</LastName>
+  <Email>g_kolev@abv.bg</Email>
+  <Gender>male</Gender>
+  <YearBorn>1988</YearBorn>
+  <Nationality>Bulgarian</Nationality>
+  <LiveInCity>Veliko Turnovo</LiveInCity>
+  <Details>Idea and full development of : www.wiadvice.com
+    Other developments, which can be demonstrated :
+    - Gallery site (ASP.NET) for diploma thesis (2-3 weeks);
+    - Short FLASH movie intro of animation serial "South Park";
+    - FLASH encyclopedia for animals, also for diploma thesis;
+    Development tools used (mostly for course projects): JBuilder , Visual Studio 2008/2010 , Eclipse , Dreamweaver , Visual Studio 6, Adobe Flash</Details>
+  <Education>
+    <SpEducation>
+      <From>October 2006</From>
+      <To>June 2010</To>
+      <PlaceName>St.Cyril and St.Methodius University of Veliko Tarnovo</PlaceName>
+      <Location>Veliko Turnovo / Bulgaria</Location>
+      <Level>Bachelor's degree</Level>
+      <Major>Computer science</Major>
+      <Subjects>
+        <Subject>English</Subject>
+        <Subject>C++ programming</Subject>
+        <Subject>Visual programming</Subject>
+        <Subject>Computer networks</Subject>
+        <Subject>JAVA programming</Subject>
+        <Subject>Data bases</Subject>
+        <Subject>HTML,CSS,XML,JAVA servlets</Subject>
+        <Subject>FLASH</Subject>
+      </Subjects>
+      <Details></Details>
+    </SpEducation>
+    <!-- 
+   ..
+   ..
+   -->
+  </Education>
+  <!--
+  <WorkExperiance>
+    <SpExperiance>
+      <From></From>
+      <To></To>
+      <Company></Company>
+      <Position></Position>
+      <Details></Details>
+    </SpExperiance>
+  </WorkExperiance>
+  -->
+  <Skills>
+    <Skill>
+      <Name>IIS</Name>
+      <Gradation>Average</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>ASP.NET</Name>
+      <Gradation>Good</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>WebServices</Name>
+      <Gradation>Good</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>Entity Data Model</Name>
+      <Gradation>Very good</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>C#</Name>
+      <Gradation>Very good</Gradation>
+      <Details></Details>
+    </Skill>
+    <Skill>
+      <Name>AJAX</Name>
+      <Gradation>Good</Gradation>
+      <Details></Details>
+    </Skill>
+  </Skills>
+</CV>

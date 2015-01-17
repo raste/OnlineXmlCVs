@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML CV FORMAT  -->
+<!-- Legend : -->
+<!-- *      : Not mandatory node/attribute (The others are mandatory by default)  -->
+<!-- ...    : Can be more than one node of same type (Must be with different data though)  -->
+<CV description="English">  
+  <FirstName>First</FirstName>
+  <LastName>Last</LastName>
+  <Email>mail@mail.com</Email>
+  <Gender>male</Gender>   				<!-- data must be 'male'/'female' or 'мъж'/'жена'  -->
+  <YearBorn>1988</YearBorn>				<!-- only year is accepted -->
+  <Nationality>Bulgarian</Nationality>
+  <LiveInCity>Veliko Turnovo</LiveInCity>
+  <Details></Details>				      <!-- * -->
+  
+  <Education>							        <!-- * -->
+    <SpEducation>
+      <From>October 2006</From>	  <!-- Date format : yyyy/dd/mm or 'month year' -->
+      <To>June 2010</To>				  <!-- * -->
+      <PlaceName>Some place</PlaceName>
+      <Location>some city</Location>
+      <Level>Bachelor's degree</Level>  <!-- * -->
+      <Major>Informatics</Major>        <!-- * -->
+      <Subjects>						            <!-- * -->
+        <Subject>English</Subject>		
+        <!-- ... -->
+      </Subjects>
+      <Details></Details>				  <!-- * -->
+    </SpEducation>
+    <!-- ... -->
+  </Education>
+  
+  <WorkExperiance>						    <!-- * -->
+    <SpExperiance>						    <!-- * -->
+      <From>2007/15/05</From>			<!-- Date format : yyyy/dd/mm or 'month year' -->
+      <To>2009/20/05</To>				  <!-- * -->
+      <Company>CompanyName</Company>    <!-- * -->
+      <Position>Developer</Position>
+      <Details></Details>				  <!-- * -->
+    </SpExperiance>
+	  <!-- ... -->
+  </WorkExperiance>
+  
+  <Skills>
+    <Skill>
+      <Name>IIS</Name>
+      <Gradation>Average</Gradation>   <!-- * -->
+      <Details></Details>			         <!-- * -->
+    </Skill>
+	  <!-- ... -->
+  </Skills>
+</CV>
