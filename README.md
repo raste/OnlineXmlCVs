@@ -2,6 +2,8 @@
 
 ### About
 
+June 2011
+
 A simple site for uploading and browsing CVs in XML format.
 
 It was given as recruitment task with the following objectives:
