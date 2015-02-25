@@ -14,8 +14,6 @@ It was given as recruitment task with the following objectives:
 
 It was written in 3 days. The project also has validation of the XML's (no XSD/DTD used) with detailed error messages and option to upload CV's in English and Bulgarian languages.
 
-Seems that it wasn't worth enough and I wasn't recruited :(
-
 ### Technologies
 
 .NET 4.0, Web Forms, LINQ, Entity Framework, C#
